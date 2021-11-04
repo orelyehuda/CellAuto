@@ -8,6 +8,7 @@
 #define AGE 50
 #define WIDTH AGE*2 + 1
 
+
 void idup(int *head, int *next)
 {
     int i;
@@ -31,7 +32,6 @@ void pp(int head[])
 		}
 	
 		//printf("%d  ", head[i]);
-    	
 	}
 	printf("\n");
 }
@@ -77,7 +77,6 @@ int main()
 		generation(head, next, RULES);
         	idup(head, next);
 	}
-
 
 	return 0;
 }
