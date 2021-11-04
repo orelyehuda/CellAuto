@@ -5,7 +5,7 @@
 #include <string.h>
 
 
-#define AGE 70
+#define AGE 50
 #define WIDTH AGE*2 + 1
 
 void idup(int *head, int *next)
@@ -39,44 +39,20 @@ void pp(int head[])
 void generation(int *head, int *next, int *RULES)
 {
 	int i;
+	int idx;
+	int x;
+	int y;
+	int z;
 
 	for(i = 1; i < WIDTH-1; i++)
 	{
-		if(head[i-1] && head[i] && head[i+1])
-		{
-			next[i] = RULES[0];
-		}
-
-		else if(head[i-1] && head[i] && !head[i+1])
-		{
-			next[i] = RULES[1];
-		}
-
-		else if(head[i-1] && !head[i] && head[i+1])
-		{
-			next[i] = RULES[2];
-		}
-		else if(head[i-1] && !head[i] && !head[i+1])
-		{
-			next[i] = RULES[3];
-		}
-		else if(!head[i-1] && head[i] && head[i+1])
-		{
-			next[i] = RULES[4];
-		}
-		else if(!head[i-1] && head[i] && !head[i+1])
-		{
-			next[i] = RULES[5];
-		}
-		else if(!head[i-1] && !head[i] && head[i+1])
-		{
-			next[i] = RULES[6];
-		}
-		else if(!head[i-1] && !head[i] && !head[i+1])
-		{
-			next[i] = RULES[7];
-		}
-
+		x = 4*head[i-1];
+		y = 2*head[i];
+		z = head[i+1];
+		idx = z +x+y;
+		//printf("%d \n",head[i+1] );
+		next[i] = RULES[7-idx];
+		continue;
 	}
 }
 
@@ -90,13 +66,11 @@ int main()
 	for(i = 0; i < WIDTH; i++){
 		head[i] = 0;
 	}
-	
+	pp(head);	
 	head[((WIDTH)/2)] = 1;
 
 	int next[WIDTH];
-	next[0] = 0;
-	next[WIDTH-1] = 0;
-	
+	idup(next, head);	
 	for(i = 0; i < AGE; i++)
 	{
 		pp(head);
