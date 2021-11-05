@@ -27,7 +27,8 @@
    ./a.out
    ```
    or 
-      ```sh
+   
+   ```sh
    ./a.out '# of generations"
    ```
 
