@@ -26,6 +26,11 @@
    ```sh
    ./a.out
    ```
+   or 
+   
+   ```sh
+   ./a.out '# of generations"
+   ```
 
 
 ## DEMO
