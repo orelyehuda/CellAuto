@@ -7,7 +7,7 @@
 ### Prerequisites
 
 * C99
-* GNU
+* GNU/G++
 
 
 
